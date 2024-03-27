@@ -11,4 +11,21 @@ abstract class Activity
     )
     {
     }
+
+    public function id(): ActivityId
+    {
+        return $this->id;
+    }
+
+    public function name(): ActivityName
+    {
+        return $this->name;
+    }
+
+    public function description(): ActivityDescription
+    {
+        return $this->description;
+    }
+
+
 }

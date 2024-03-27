@@ -52,3 +52,9 @@
 /.web-server-pid
 
 .idea
+###> phpunit/phpunit ###
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+
+/docker/mysql/
