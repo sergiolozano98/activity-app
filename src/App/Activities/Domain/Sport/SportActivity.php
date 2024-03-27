@@ -18,4 +18,20 @@ final class SportActivity extends Activity
     {
         parent::__construct($id, $name, $description);
     }
+
+    public static function create
+    (
+        ActivityId            $id,
+        ActivityName          $name,
+        ActivityDescription   $description,
+        SportActivityMaterial $material
+    ): SportActivity
+    {
+        return new self($id, $name, $description, $material);
+    }
+
+    public function material(): SportActivityMaterial
+    {
+        return $this->material;
+    }
 }
