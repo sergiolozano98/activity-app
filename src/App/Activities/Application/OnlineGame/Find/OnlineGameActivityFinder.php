@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Activities\Application\Sport\Find;
-
+namespace App\Activities\Application\OnlineGame\Find;
 
 use App\Activities\Domain\Activity;
 use App\Activities\Domain\ActivityId;
 use App\Activities\Domain\ActivityRepository;
-use App\Activities\Domain\Sport\SportActivity;
 
-readonly class SportActivityFinder
+readonly class OnlineGameActivityFinder
 {
     public function __construct(private ActivityRepository $repository)
     {
