@@ -28,4 +28,14 @@ class SportActivityMother
             $material ?? SportActivityMaterialMother::create()
         );
     }
+
+    public static function withSpecificId(ActivityId $id): SportActivity
+    {
+        return self::create(
+            $id,
+            ActivityNameMother::create('name'),
+            ActivityDescriptionMother::create('description'),
+            SportActivityMaterialMother::create('material')
+        );
+    }
 }
