@@ -24,4 +24,9 @@ readonly class MysqlActivitiesRepository extends DoctrineRepository implements A
     {
         $this->remove($activity);
     }
+
+    public function findAll(): array
+    {
+        return $this->repository(Activity::class)->findAll();
+    }
 }

@@ -9,4 +9,6 @@ interface ActivityRepository
     public function search(ActivityId $id): ?Activity;
 
     public function delete(Activity $activity): void;
+
+    public function findAll(): array;
 }

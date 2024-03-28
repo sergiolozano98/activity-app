@@ -10,10 +10,10 @@ use App\Activities\Domain\ActivityName;
 final class SportActivity extends Activity
 {
     public function __construct(
-        protected ActivityId            $id,
-        protected ActivityName          $name,
-        protected ActivityDescription   $description,
-        protected SportActivityMaterial $material
+        protected ActivityId          $id,
+        protected ActivityName        $name,
+        protected ActivityDescription $description,
+        protected SportActivityType   $type
     )
     {
         parent::__construct($id, $name, $description);
@@ -21,17 +21,17 @@ final class SportActivity extends Activity
 
     public static function create
     (
-        ActivityId            $id,
-        ActivityName          $name,
-        ActivityDescription   $description,
-        SportActivityMaterial $material
+        ActivityId          $id,
+        ActivityName        $name,
+        ActivityDescription $description,
+        SportActivityType   $type
     ): SportActivity
     {
-        return new self($id, $name, $description, $material);
+        return new self($id, $name, $description, $type);
     }
 
-    public function material(): SportActivityMaterial
+    public function type(): SportActivityType
     {
-        return $this->material;
+        return $this->type;
     }
 }
