@@ -4,7 +4,7 @@ namespace App\Activities\Application\OnlineGame\Find;
 
 use App\Activities\Application\OnlineGame\OnlineGameActivityResponse;
 use App\Activities\Domain\ActivityId;
-use App\Activities\Domain\Sport\Exception\OnlineGameActivityNotFoundException;
+use App\Activities\Domain\OnlineGame\Exception\OnlineGameActivityNotFoundException;
 use App\Shared\Domain\Bus\Query\QueryHandler;
 
 readonly class FindOnlineGameActivityQueryHandler implements QueryHandler
