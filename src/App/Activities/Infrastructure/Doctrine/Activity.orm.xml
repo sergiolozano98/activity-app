@@ -8,6 +8,7 @@
         <discriminator-column name="type" type="string" />
         <discriminator-map>
             <discriminator-mapping value="sport" class="App\Activities\Domain\Sport\SportActivity" />
+            <discriminator-mapping value="online_game" class="App\Activities\Domain\OnlineGame\OnlineGameActivity" />
         </discriminator-map>
 
         <id name="id" type="activity_id" column="id" length="36" />
