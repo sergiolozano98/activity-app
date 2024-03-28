@@ -11,7 +11,7 @@ class SportActivityResponse implements Response
         public string $id,
         public string $name,
         public string $description,
-        public string $material
+        public string $type
     )
     {
     }
@@ -22,7 +22,7 @@ class SportActivityResponse implements Response
             $activity->id()->value(),
             $activity->name()->value(),
             $activity->description()->value(),
-            $activity->material()->value()
+            $activity->type()->value()
         );
     }
 }

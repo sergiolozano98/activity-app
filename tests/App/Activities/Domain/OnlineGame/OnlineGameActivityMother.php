@@ -7,12 +7,12 @@ use App\Activities\Domain\ActivityId;
 use App\Activities\Domain\ActivityName;
 use App\Activities\Domain\OnlineGame\OnlineGameActivityUrl;
 use App\Activities\Domain\Sport\SportActivity;
-use App\Activities\Domain\Sport\SportActivityMaterial;
+use App\Activities\Domain\Sport\SportActivityType;
 use App\Shared\Domain\ValueObject\Uuid;
 use Tests\App\Activities\Domain\ActivityDescriptionMother;
 use Tests\App\Activities\Domain\ActivityIdMother;
 use Tests\App\Activities\Domain\ActivityNameMother;
-use Tests\App\Activities\Domain\Sport\SportActivityMaterialMother;
+use Tests\App\Activities\Domain\Sport\SportActivityTypeMother;
 
 class OnlineGameActivityMother
 {
@@ -27,7 +27,7 @@ class OnlineGameActivityMother
             $id ?? ActivityIdMother::create(),
             $name ?? ActivityNameMother::create(),
             $description ?? ActivityDescriptionMother::create(),
-            $url ?? SportActivityMaterialMother::create()
+            $url ?? SportActivityTypeMother::create()
         );
     }
 

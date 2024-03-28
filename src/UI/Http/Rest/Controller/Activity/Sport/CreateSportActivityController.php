@@ -25,9 +25,9 @@ readonly class CreateSportActivityController
             $id = $data['id'];
             $name = $data['name'];
             $description = $data['description'];
-            $material = $data['material'];
+            $type = $data['type'];
 
-            $this->commandBus->dispatch(new CreateSportActivityCommand($id, $name, $description, $material));
+            $this->commandBus->dispatch(new CreateSportActivityCommand($id, $name, $description, $type));
         } catch (\Exception $exception) {
             return new JsonResponse(['status' => sprintf('Error (Sport Activity not created : %s)', $exception->getMessage())], Response::HTTP_INTERNAL_SERVER_ERROR);
         }

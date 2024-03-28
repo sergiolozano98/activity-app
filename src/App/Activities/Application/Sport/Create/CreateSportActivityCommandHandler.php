@@ -5,7 +5,7 @@ namespace App\Activities\Application\Sport\Create;
 use App\Activities\Domain\ActivityDescription;
 use App\Activities\Domain\ActivityId;
 use App\Activities\Domain\ActivityName;
-use App\Activities\Domain\Sport\SportActivityMaterial;
+use App\Activities\Domain\Sport\SportActivityType;
 use App\Shared\Domain\Bus\Command\CommandHandler;
 
 readonly class CreateSportActivityCommandHandler implements CommandHandler
@@ -20,7 +20,7 @@ readonly class CreateSportActivityCommandHandler implements CommandHandler
             new ActivityId($command->id()),
             new ActivityName($command->name()),
             new ActivityDescription($command->description()),
-            new SportActivityMaterial($command->material())
+            new SportActivityType($command->type())
         );
     }
 }

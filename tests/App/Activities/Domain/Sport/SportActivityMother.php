@@ -6,7 +6,7 @@ use App\Activities\Domain\ActivityDescription;
 use App\Activities\Domain\ActivityId;
 use App\Activities\Domain\ActivityName;
 use App\Activities\Domain\Sport\SportActivity;
-use App\Activities\Domain\Sport\SportActivityMaterial;
+use App\Activities\Domain\Sport\SportActivityType;
 use App\Shared\Domain\ValueObject\Uuid;
 use Tests\App\Activities\Domain\ActivityDescriptionMother;
 use Tests\App\Activities\Domain\ActivityIdMother;
@@ -18,14 +18,14 @@ class SportActivityMother
         ?ActivityId            $id = null,
         ?ActivityName          $name = null,
         ?ActivityDescription   $description = null,
-        ?SportActivityMaterial $material = null
+        ?SportActivityType $type = null
     ): SportActivity
     {
         return new SportActivity(
             $id ?? ActivityIdMother::create(),
             $name ?? ActivityNameMother::create(),
             $description ?? ActivityDescriptionMother::create(),
-            $material ?? SportActivityMaterialMother::create()
+            $type ?? SportActivityTypeMother::create()
         );
     }
 
@@ -35,7 +35,7 @@ class SportActivityMother
             $id,
             ActivityNameMother::create('name'),
             ActivityDescriptionMother::create('description'),
-            SportActivityMaterialMother::create('material')
+            SportActivityTypeMother::create('type')
         );
     }
 }

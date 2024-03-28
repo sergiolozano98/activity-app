@@ -5,6 +5,6 @@
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
     <entity name="App\Activities\Domain\Sport\SportActivity" table="activities_sports">
-        <embedded name="material" class="App\Activities\Domain\Sport\SportActivityMaterial" use-column-prefix="false"/>
+        <embedded name="type" class="App\Activities\Domain\Sport\SportActivityType" use-column-prefix="false"/>
     </entity>
 </doctrine-mapping>

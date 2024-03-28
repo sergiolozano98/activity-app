@@ -10,7 +10,7 @@ readonly class CreateSportActivityCommand implements Command
         private string $id,
         private string $name,
         private string $description,
-        private string $material,
+        private string $type,
     )
     {
     }
@@ -30,8 +30,8 @@ readonly class CreateSportActivityCommand implements Command
         return $this->description;
     }
 
-    public function material(): string
+    public function type(): string
     {
-        return $this->material;
+        return $this->type;
     }
 }
