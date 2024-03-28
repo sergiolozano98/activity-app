@@ -35,6 +35,10 @@ run-test:
 run-test-coverage:
 	docker compose -f docker/docker-compose.yml exec -T php sh -lc "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html coverage"
 
+init-test:
+	docker compose -f docker/docker-compose.yml exec php php bin/console doctrine:database:create --env=test
+	docker compose -f docker/docker-compose.yml exec php php bin/console doctrine:schema:update --env=test --force
+
 cache-clear:
 	docker compose -f docker/docker-compose.yml exec php php bin/console cache:clear
 
