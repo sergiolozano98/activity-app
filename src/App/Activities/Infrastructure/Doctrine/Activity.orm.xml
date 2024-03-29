@@ -5,15 +5,16 @@
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
     <entity name="App\Activities\Domain\Activity" table="activities" inheritance-type="JOINED">
-        <discriminator-column name="type" type="string" />
+        <discriminator-column name="type" type="string"/>
         <discriminator-map>
-            <discriminator-mapping value="sport" class="App\Activities\Domain\Sport\SportActivity" />
-            <discriminator-mapping value="online_game" class="App\Activities\Domain\OnlineGame\OnlineGameActivity" />
+            <discriminator-mapping value="sport" class="App\Activities\Domain\Sport\SportActivity"/>
+            <discriminator-mapping value="online_game" class="App\Activities\Domain\OnlineGame\OnlineGameActivity"/>
+            <discriminator-mapping value="adventures" class="App\Activities\Domain\Adventure\AdventureActivity"/>
         </discriminator-map>
 
-        <id name="id" type="activity_id" column="id" length="36" />
+        <id name="id" type="activity_id" column="id" length="36"/>
 
-        <embedded name="name" class="App\Activities\Domain\ActivityName" use-column-prefix="false" />
-        <embedded name="description" class="App\Activities\Domain\ActivityDescription" use-column-prefix="false" />
+        <embedded name="name" class="App\Activities\Domain\ActivityName" use-column-prefix="false"/>
+        <embedded name="description" class="App\Activities\Domain\ActivityDescription" use-column-prefix="false"/>
     </entity>
 </doctrine-mapping>

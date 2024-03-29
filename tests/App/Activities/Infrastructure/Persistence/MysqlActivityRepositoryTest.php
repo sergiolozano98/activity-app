@@ -4,6 +4,7 @@ namespace Tests\App\Activities\Infrastructure\Persistence;
 
 use Tests\App\Activities\ActivityModuleInfrastructureTestCase;
 use App\Activities\Domain\Activity;
+use Tests\App\Activities\Domain\Adventure\AdventureActivityMother;
 use Tests\App\Activities\Domain\OnlineGame\OnlineGameActivityMother;
 use Tests\App\Activities\Domain\Sport\SportActivityMother;
 
@@ -45,7 +46,8 @@ class MysqlActivityRepositoryTest extends ActivityModuleInfrastructureTestCase
     {
         return [
             'sport' => [SportActivityMother::create()],
-            'online_game' => [OnlineGameActivityMother::create()]
+            'online_game' => [OnlineGameActivityMother::create()],
+            'adventures' => [AdventureActivityMother::create()]
         ];
     }
 }
