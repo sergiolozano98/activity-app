@@ -34,6 +34,17 @@ class MysqlActivityRepositoryTest extends ActivityModuleInfrastructureTestCase
      * @test
      * @dataProvider activities
      */
+    public function it_should_find_all_an_existing_activity(Activity $activity): void
+    {
+        $this->mySqlRepository()->save($activity);
+
+        $this->assertEquals([$activity], $this->mySqlRepository()->findAll());
+    }
+
+    /**
+     * @test
+     * @dataProvider activities
+     */
     public function it_should_delete_an_existing_activity(Activity $activity): void
     {
         $this->mySqlRepository()->save($activity);
