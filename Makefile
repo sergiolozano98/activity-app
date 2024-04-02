@@ -4,6 +4,7 @@ init:
 	make start
 	make composer-install
 	make database-create
+	make migration-migrate
 
 start:
 	docker compose -f docker/docker-compose.yml  up -d
