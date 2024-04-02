@@ -27,7 +27,7 @@ class CreateSportActivityTest extends TestCase
     /**
      * @test
      */
-    public function it_should_create_and_send_notify()
+    public function it_should_create()
     {
         $command = CreateSportActivityCommandMother::create();
 

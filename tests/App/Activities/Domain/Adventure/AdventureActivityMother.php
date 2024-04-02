@@ -27,4 +27,14 @@ class AdventureActivityMother
             $material ?? AdventureActivityMaterialMother::create()
         );
     }
+
+    public static function withSpecificId(ActivityId $id): AdventureActivity
+    {
+        return self::create(
+            $id,
+            ActivityNameMother::create(),
+            ActivityDescriptionMother::create(),
+            AdventureActivityMaterialMother::create()
+        );
+    }
 }
