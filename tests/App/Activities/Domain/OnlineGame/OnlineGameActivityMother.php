@@ -5,14 +5,11 @@ namespace Tests\App\Activities\Domain\OnlineGame;
 use App\Activities\Domain\ActivityDescription;
 use App\Activities\Domain\ActivityId;
 use App\Activities\Domain\ActivityName;
+use App\Activities\Domain\OnlineGame\OnlineGameActivity;
 use App\Activities\Domain\OnlineGame\OnlineGameActivityUrl;
-use App\Activities\Domain\Sport\SportActivity;
-use App\Activities\Domain\Sport\SportActivityType;
-use App\Shared\Domain\ValueObject\Uuid;
 use Tests\App\Activities\Domain\ActivityDescriptionMother;
 use Tests\App\Activities\Domain\ActivityIdMother;
 use Tests\App\Activities\Domain\ActivityNameMother;
-use Tests\App\Activities\Domain\Sport\SportActivityTypeMother;
 
 class OnlineGameActivityMother
 {
@@ -21,17 +18,17 @@ class OnlineGameActivityMother
         ?ActivityName          $name = null,
         ?ActivityDescription   $description = null,
         ?OnlineGameActivityUrl $url = null
-    ): SportActivity
+    ): OnlineGameActivity
     {
-        return new SportActivity(
+        return new OnlineGameActivity(
             $id ?? ActivityIdMother::create(),
             $name ?? ActivityNameMother::create(),
             $description ?? ActivityDescriptionMother::create(),
-            $url ?? SportActivityTypeMother::create()
+            $url ?? OnlineGameUrlActivityMother::create()
         );
     }
 
-    public static function withSpecificId(ActivityId $id): SportActivity
+    public static function withSpecificId(ActivityId $id): OnlineGameActivity
     {
         return self::create(
             $id,
