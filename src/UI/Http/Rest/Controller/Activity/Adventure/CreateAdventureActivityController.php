@@ -4,6 +4,7 @@ namespace UI\Http\Rest\Controller\Activity\Adventure;
 
 use App\Activities\Application\Adventure\Create\CreateAdventureActivityCommand;
 use App\Shared\Domain\Bus\Command\CommandBus;
+use Assert\Assertion;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,6 +21,11 @@ readonly class CreateAdventureActivityController
     {
         try {
             $data = json_decode($request->getContent(), true);
+
+            Assertion::keyExists($data, 'id', '<id> is required.');
+            Assertion::keyExists($data, 'name', '<name> is required.');
+            Assertion::keyExists($data, 'description', '<description> is required.');
+            Assertion::keyExists($data, 'material', '<material> is required.');
 
             $id = $data['id'];
             $name = $data['name'];
