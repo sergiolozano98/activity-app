@@ -4,6 +4,7 @@ namespace UI\Http\Rest\Controller\Activity\OnlineGame;
 
 use App\Activities\Application\OnlineGame\Create\CreateOnlineGameActivityCommand;
 use App\Shared\Domain\Bus\Command\CommandBus;
+use Assert\Assertion;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,6 +22,11 @@ readonly class CreateOnlineGameActivityController
     {
         try {
             $data = json_decode($request->getContent(), true);
+
+            Assertion::keyExists($data, 'id', '<id> is required.');
+            Assertion::keyExists($data, 'name', '<name> is required.');
+            Assertion::keyExists($data, 'description', '<description> is required.');
+            Assertion::keyExists($data, 'url', '<url> is required.');
 
             $id = $data['id'];
             $name = $data['name'];
